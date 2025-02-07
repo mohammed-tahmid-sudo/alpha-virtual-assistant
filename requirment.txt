@@ -1,0 +1,10 @@
+pynput
+ollama
+requests
+duckduckgo-search
+beautifulsoup4
+gtts
+sounddevice
+speechrecognition
+faster-whisper
+numpy
