@@ -1,0 +1,96 @@
+# Build directories
+build*/
+cmake-build-*/
+out/
+.cmake/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+compile_commands.json
+
+# Qt generated files
+*.pro.user
+*.pro.user.*
+ui_*.h
+moc_*.cpp
+qrc_*.cpp
+*.moc
+
+# C/C++ compiled files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Models and data
+models/cache/
+models/downloads/
+*.model
+*.bin
+*.pkl
+*.pt
+*.pth
+
+# Logs
+*.log
+logs/
+
+# Config files with sensitive data
+config/secrets.json
+config/api_keys.json
+.env.local
+.env.production
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Documentation build
+docs/_build/
+docs/html/
+docs/latex/
+
+# Package files
+*.deb
+*.rpm
+*.pkg
+*.dmg
+
+# Backup files
+*.bak
+*.backup
