@@ -21,10 +21,12 @@ set(SOURCES
 # Create executable
 add_executable(virtual_assistant ${SOURCES})
 
-# Include directories
-target_include_directories(virtual_assistant PRIVATE ${Python3_INCLUDE_DIRS})
+# Include directories (Python + Qt)
+target_include_directories(virtual_assistant PRIVATE
+    ${Python3_INCLUDE_DIRS}
+)
 
-# Link libraries
+# Link libraries (Qt automatically sets includes)
 target_link_libraries(virtual_assistant
     PRIVATE Qt6::Core Qt6::Widgets ${Python3_LIBRARIES}
 )
@@ -35,6 +37,8 @@ set_target_properties(virtual_assistant PROPERTIES
     AUTOUIC ON
     AUTORCC ON
 )
+
+# Custom run target
 add_custom_target(run
     COMMAND virtual_assistant
     DEPENDS virtual_assistant
