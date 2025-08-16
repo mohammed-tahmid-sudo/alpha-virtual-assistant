@@ -16,6 +16,7 @@ set(SOURCES
     desktop_control.cpp
     iot_control.cpp
     model_bridge.cpp
+    io.cpp
 )
 
 # Create executable

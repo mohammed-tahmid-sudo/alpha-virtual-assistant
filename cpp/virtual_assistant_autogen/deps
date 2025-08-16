@@ -6,6 +6,7 @@ virtual_assistant_autogen/timestamp: \
 	/home/tahmid/programming_files/Virtual-Assistant-/cpp/audio_capture.cpp \
 	/home/tahmid/programming_files/Virtual-Assistant-/cpp/command_parser.cpp \
 	/home/tahmid/programming_files/Virtual-Assistant-/cpp/desktop_control.cpp \
+	/home/tahmid/programming_files/Virtual-Assistant-/cpp/io.cpp \
 	/home/tahmid/programming_files/Virtual-Assistant-/cpp/iot_control.cpp \
 	/home/tahmid/programming_files/Virtual-Assistant-/cpp/main.cpp \
 	/home/tahmid/programming_files/Virtual-Assistant-/cpp/model_bridge.cpp \

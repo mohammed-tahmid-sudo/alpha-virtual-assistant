@@ -2,28 +2,34 @@
 #include <QStringList>
 #include <QCheckBox>
 #include <QComboBox>
-#include <QHBoxLayout>
-#include <QListWidget>
-#include <QPushButton>
-#include <QStackedWidget>
 #include <QVBoxLayout>
 #include <QWidget>
 
+#include "io.h"
+
 int main(int argc, char *argv[]) {
-  QApplication app(argc, argv);
+    QApplication app(argc, argv);
 
-  QWidget window;
-  QVBoxLayout *layout = new QVBoxLayout(&window);
-  layout->addWidget(new QCheckBox("click me"));
+    QWidget window;
+    QVBoxLayout *layout = new QVBoxLayout(&window);
 
-  QComboBox *cobobox = new QComboBox();
-  QStringList models = {"llama", "ollama"};
-  cobobox->addItems(models);
+    layout->addWidget(new QCheckBox("click me"));
 
-  layout->addWidget(cobobox);
+    QComboBox *cobobox = new QComboBox();
 
-  window.resize(600, 400);
-  window.show();
+    // Convert std::vector<std::string> to QStringList
+    std::vector<std::string> models_std = list_models();
+    QStringList models_qt;
+    for (const auto &m : models_std) {
+        models_qt << QString::fromStdString(m);
+    }
 
-  return app.exec();
+    cobobox->addItems(models_qt);
+    layout->addWidget(cobobox);
+
+    window.resize(600, 400);
+    window.show();
+
+    return app.exec();
 }
+

@@ -240,6 +240,30 @@ desktop_control.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/desktop_control.cpp.s
 .PHONY : desktop_control.cpp.s
 
+io.o: io.cpp.o
+.PHONY : io.o
+
+# target to build an object file
+io.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/io.cpp.o
+.PHONY : io.cpp.o
+
+io.i: io.cpp.i
+.PHONY : io.i
+
+# target to preprocess a source file
+io.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/io.cpp.i
+.PHONY : io.cpp.i
+
+io.s: io.cpp.s
+.PHONY : io.s
+
+# target to generate assembly for a file
+io.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/io.cpp.s
+.PHONY : io.cpp.s
+
 iot_control.o: iot_control.cpp.o
 .PHONY : iot_control.o
 
@@ -381,6 +405,9 @@ help:
 	@echo "... desktop_control.o"
 	@echo "... desktop_control.i"
 	@echo "... desktop_control.s"
+	@echo "... io.o"
+	@echo "... io.i"
+	@echo "... io.s"
 	@echo "... iot_control.o"
 	@echo "... iot_control.i"
 	@echo "... iot_control.s"
