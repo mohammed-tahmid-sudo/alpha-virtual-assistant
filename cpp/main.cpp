@@ -13,8 +13,6 @@ int main(int argc, char *argv[]) {
     QWidget window;
     QVBoxLayout *layout = new QVBoxLayout(&window);
 
-    layout->addWidget(new QCheckBox("click me"));
-
     QComboBox *cobobox = new QComboBox();
 
     // Convert std::vector<std::string> to QStringList
