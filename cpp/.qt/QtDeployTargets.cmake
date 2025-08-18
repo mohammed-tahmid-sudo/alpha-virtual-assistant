@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_virtual_assistant_FILE /home/tahmid/programming_files/Virtual-Assistant-/cpp/virtual_assistant)
+set(__QT_DEPLOY_TARGET_virtual_assistant_TYPE EXECUTABLE)
