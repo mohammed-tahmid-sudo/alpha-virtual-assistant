@@ -1,45 +1,51 @@
-cmake_minimum_required(VERSION 3.10)
-project(VirtualAssistant)
+cmake_minimum_required(VERSION 3.16)
+project(VirtualAssistant LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Find Qt libraries
-find_package(Qt6 COMPONENTS Core Widgets REQUIRED)
-find_package(Python3 COMPONENTS Development REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+find_package(Python3 REQUIRED COMPONENTS Development)
 
-# Add source files
-set(SOURCES
+# Collect all .cpp files from each component folder
+file(GLOB SOURCES
     main.cpp
-    audio_capture.cpp
-    wake_word.cpp
-    command_parser.cpp
-    desktop_control.cpp
-    iot_control.cpp
-    model_bridge.cpp
-    io.cpp
+    stt_tts/*.cpp
+    wake_word/*.cpp
+    command_parser/*.cpp
+    desktop_control/*.cpp
+    iot_control/*.cpp
+    model_bridge/*.cpp
+    io/*.cpp
 )
 
-# Create executable
 add_executable(virtual_assistant ${SOURCES})
 
-# Include directories (Python + Qt)
+# Include directories
 target_include_directories(virtual_assistant PRIVATE
     ${Python3_INCLUDE_DIRS}
+    io
+    command_parser
+    desktop_control
+    iot_control
+    stt_tts
+    wake_word
+    model_bridge
 )
 
-# Link libraries (Qt automatically sets includes)
+# Link Qt and Python
 target_link_libraries(virtual_assistant
     PRIVATE Qt6::Core Qt6::Widgets ${Python3_LIBRARIES}
 )
 
-# Enable Qt's automatic MOC, UIC, and RCC
+# Qt auto features
 set_target_properties(virtual_assistant PROPERTIES
     AUTOMOC ON
     AUTOUIC ON
     AUTORCC ON
 )
 
-# Custom run target
+# Run target
 add_custom_target(run
     COMMAND virtual_assistant
     DEPENDS virtual_assistant
