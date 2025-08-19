@@ -168,125 +168,101 @@ virtual_assistant_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant_autogen.dir/build.make CMakeFiles/virtual_assistant_autogen.dir/build
 .PHONY : virtual_assistant_autogen/fast
 
-audio_capture.o: audio_capture.cpp.o
-.PHONY : audio_capture.o
+command_parser/command_parser.o: command_parser/command_parser.cpp.o
+.PHONY : command_parser/command_parser.o
 
 # target to build an object file
-audio_capture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/audio_capture.cpp.o
-.PHONY : audio_capture.cpp.o
+command_parser/command_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/command_parser/command_parser.cpp.o
+.PHONY : command_parser/command_parser.cpp.o
 
-audio_capture.i: audio_capture.cpp.i
-.PHONY : audio_capture.i
+command_parser/command_parser.i: command_parser/command_parser.cpp.i
+.PHONY : command_parser/command_parser.i
 
 # target to preprocess a source file
-audio_capture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/audio_capture.cpp.i
-.PHONY : audio_capture.cpp.i
+command_parser/command_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/command_parser/command_parser.cpp.i
+.PHONY : command_parser/command_parser.cpp.i
 
-audio_capture.s: audio_capture.cpp.s
-.PHONY : audio_capture.s
+command_parser/command_parser.s: command_parser/command_parser.cpp.s
+.PHONY : command_parser/command_parser.s
 
 # target to generate assembly for a file
-audio_capture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/audio_capture.cpp.s
-.PHONY : audio_capture.cpp.s
+command_parser/command_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/command_parser/command_parser.cpp.s
+.PHONY : command_parser/command_parser.cpp.s
 
-command_parser.o: command_parser.cpp.o
-.PHONY : command_parser.o
+desktop_control/desktop_control.o: desktop_control/desktop_control.cpp.o
+.PHONY : desktop_control/desktop_control.o
 
 # target to build an object file
-command_parser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/command_parser.cpp.o
-.PHONY : command_parser.cpp.o
+desktop_control/desktop_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/desktop_control/desktop_control.cpp.o
+.PHONY : desktop_control/desktop_control.cpp.o
 
-command_parser.i: command_parser.cpp.i
-.PHONY : command_parser.i
+desktop_control/desktop_control.i: desktop_control/desktop_control.cpp.i
+.PHONY : desktop_control/desktop_control.i
 
 # target to preprocess a source file
-command_parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/command_parser.cpp.i
-.PHONY : command_parser.cpp.i
+desktop_control/desktop_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/desktop_control/desktop_control.cpp.i
+.PHONY : desktop_control/desktop_control.cpp.i
 
-command_parser.s: command_parser.cpp.s
-.PHONY : command_parser.s
+desktop_control/desktop_control.s: desktop_control/desktop_control.cpp.s
+.PHONY : desktop_control/desktop_control.s
 
 # target to generate assembly for a file
-command_parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/command_parser.cpp.s
-.PHONY : command_parser.cpp.s
+desktop_control/desktop_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/desktop_control/desktop_control.cpp.s
+.PHONY : desktop_control/desktop_control.cpp.s
 
-desktop_control.o: desktop_control.cpp.o
-.PHONY : desktop_control.o
+io/io.o: io/io.cpp.o
+.PHONY : io/io.o
 
 # target to build an object file
-desktop_control.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/desktop_control.cpp.o
-.PHONY : desktop_control.cpp.o
+io/io.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/io/io.cpp.o
+.PHONY : io/io.cpp.o
 
-desktop_control.i: desktop_control.cpp.i
-.PHONY : desktop_control.i
+io/io.i: io/io.cpp.i
+.PHONY : io/io.i
 
 # target to preprocess a source file
-desktop_control.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/desktop_control.cpp.i
-.PHONY : desktop_control.cpp.i
+io/io.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/io/io.cpp.i
+.PHONY : io/io.cpp.i
 
-desktop_control.s: desktop_control.cpp.s
-.PHONY : desktop_control.s
+io/io.s: io/io.cpp.s
+.PHONY : io/io.s
 
 # target to generate assembly for a file
-desktop_control.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/desktop_control.cpp.s
-.PHONY : desktop_control.cpp.s
+io/io.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/io/io.cpp.s
+.PHONY : io/io.cpp.s
 
-io.o: io.cpp.o
-.PHONY : io.o
+iot_control/iot_control.o: iot_control/iot_control.cpp.o
+.PHONY : iot_control/iot_control.o
 
 # target to build an object file
-io.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/io.cpp.o
-.PHONY : io.cpp.o
+iot_control/iot_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/iot_control/iot_control.cpp.o
+.PHONY : iot_control/iot_control.cpp.o
 
-io.i: io.cpp.i
-.PHONY : io.i
-
-# target to preprocess a source file
-io.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/io.cpp.i
-.PHONY : io.cpp.i
-
-io.s: io.cpp.s
-.PHONY : io.s
-
-# target to generate assembly for a file
-io.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/io.cpp.s
-.PHONY : io.cpp.s
-
-iot_control.o: iot_control.cpp.o
-.PHONY : iot_control.o
-
-# target to build an object file
-iot_control.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/iot_control.cpp.o
-.PHONY : iot_control.cpp.o
-
-iot_control.i: iot_control.cpp.i
-.PHONY : iot_control.i
+iot_control/iot_control.i: iot_control/iot_control.cpp.i
+.PHONY : iot_control/iot_control.i
 
 # target to preprocess a source file
-iot_control.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/iot_control.cpp.i
-.PHONY : iot_control.cpp.i
+iot_control/iot_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/iot_control/iot_control.cpp.i
+.PHONY : iot_control/iot_control.cpp.i
 
-iot_control.s: iot_control.cpp.s
-.PHONY : iot_control.s
+iot_control/iot_control.s: iot_control/iot_control.cpp.s
+.PHONY : iot_control/iot_control.s
 
 # target to generate assembly for a file
-iot_control.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/iot_control.cpp.s
-.PHONY : iot_control.cpp.s
+iot_control/iot_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/iot_control/iot_control.cpp.s
+.PHONY : iot_control/iot_control.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -312,29 +288,53 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-model_bridge.o: model_bridge.cpp.o
-.PHONY : model_bridge.o
+model_bridge/model_bridge.o: model_bridge/model_bridge.cpp.o
+.PHONY : model_bridge/model_bridge.o
 
 # target to build an object file
-model_bridge.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/model_bridge.cpp.o
-.PHONY : model_bridge.cpp.o
+model_bridge/model_bridge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/model_bridge/model_bridge.cpp.o
+.PHONY : model_bridge/model_bridge.cpp.o
 
-model_bridge.i: model_bridge.cpp.i
-.PHONY : model_bridge.i
+model_bridge/model_bridge.i: model_bridge/model_bridge.cpp.i
+.PHONY : model_bridge/model_bridge.i
 
 # target to preprocess a source file
-model_bridge.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/model_bridge.cpp.i
-.PHONY : model_bridge.cpp.i
+model_bridge/model_bridge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/model_bridge/model_bridge.cpp.i
+.PHONY : model_bridge/model_bridge.cpp.i
 
-model_bridge.s: model_bridge.cpp.s
-.PHONY : model_bridge.s
+model_bridge/model_bridge.s: model_bridge/model_bridge.cpp.s
+.PHONY : model_bridge/model_bridge.s
 
 # target to generate assembly for a file
-model_bridge.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/model_bridge.cpp.s
-.PHONY : model_bridge.cpp.s
+model_bridge/model_bridge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/model_bridge/model_bridge.cpp.s
+.PHONY : model_bridge/model_bridge.cpp.s
+
+stt_tts/audio_capture.o: stt_tts/audio_capture.cpp.o
+.PHONY : stt_tts/audio_capture.o
+
+# target to build an object file
+stt_tts/audio_capture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/stt_tts/audio_capture.cpp.o
+.PHONY : stt_tts/audio_capture.cpp.o
+
+stt_tts/audio_capture.i: stt_tts/audio_capture.cpp.i
+.PHONY : stt_tts/audio_capture.i
+
+# target to preprocess a source file
+stt_tts/audio_capture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/stt_tts/audio_capture.cpp.i
+.PHONY : stt_tts/audio_capture.cpp.i
+
+stt_tts/audio_capture.s: stt_tts/audio_capture.cpp.s
+.PHONY : stt_tts/audio_capture.s
+
+# target to generate assembly for a file
+stt_tts/audio_capture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/stt_tts/audio_capture.cpp.s
+.PHONY : stt_tts/audio_capture.cpp.s
 
 virtual_assistant_autogen/mocs_compilation.o: virtual_assistant_autogen/mocs_compilation.cpp.o
 .PHONY : virtual_assistant_autogen/mocs_compilation.o
@@ -360,29 +360,29 @@ virtual_assistant_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/virtual_assistant_autogen/mocs_compilation.cpp.s
 .PHONY : virtual_assistant_autogen/mocs_compilation.cpp.s
 
-wake_word.o: wake_word.cpp.o
-.PHONY : wake_word.o
+wake_word/wake_word.o: wake_word/wake_word.cpp.o
+.PHONY : wake_word/wake_word.o
 
 # target to build an object file
-wake_word.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/wake_word.cpp.o
-.PHONY : wake_word.cpp.o
+wake_word/wake_word.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/wake_word/wake_word.cpp.o
+.PHONY : wake_word/wake_word.cpp.o
 
-wake_word.i: wake_word.cpp.i
-.PHONY : wake_word.i
+wake_word/wake_word.i: wake_word/wake_word.cpp.i
+.PHONY : wake_word/wake_word.i
 
 # target to preprocess a source file
-wake_word.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/wake_word.cpp.i
-.PHONY : wake_word.cpp.i
+wake_word/wake_word.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/wake_word/wake_word.cpp.i
+.PHONY : wake_word/wake_word.cpp.i
 
-wake_word.s: wake_word.cpp.s
-.PHONY : wake_word.s
+wake_word/wake_word.s: wake_word/wake_word.cpp.s
+.PHONY : wake_word/wake_word.s
 
 # target to generate assembly for a file
-wake_word.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/wake_word.cpp.s
-.PHONY : wake_word.cpp.s
+wake_word/wake_word.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/virtual_assistant.dir/build.make CMakeFiles/virtual_assistant.dir/wake_word/wake_word.cpp.s
+.PHONY : wake_word/wake_word.cpp.s
 
 # Help Target
 help:
@@ -396,33 +396,33 @@ help:
 	@echo "... virtual_assistant_autogen"
 	@echo "... virtual_assistant_autogen_timestamp_deps"
 	@echo "... virtual_assistant"
-	@echo "... audio_capture.o"
-	@echo "... audio_capture.i"
-	@echo "... audio_capture.s"
-	@echo "... command_parser.o"
-	@echo "... command_parser.i"
-	@echo "... command_parser.s"
-	@echo "... desktop_control.o"
-	@echo "... desktop_control.i"
-	@echo "... desktop_control.s"
-	@echo "... io.o"
-	@echo "... io.i"
-	@echo "... io.s"
-	@echo "... iot_control.o"
-	@echo "... iot_control.i"
-	@echo "... iot_control.s"
+	@echo "... command_parser/command_parser.o"
+	@echo "... command_parser/command_parser.i"
+	@echo "... command_parser/command_parser.s"
+	@echo "... desktop_control/desktop_control.o"
+	@echo "... desktop_control/desktop_control.i"
+	@echo "... desktop_control/desktop_control.s"
+	@echo "... io/io.o"
+	@echo "... io/io.i"
+	@echo "... io/io.s"
+	@echo "... iot_control/iot_control.o"
+	@echo "... iot_control/iot_control.i"
+	@echo "... iot_control/iot_control.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... model_bridge.o"
-	@echo "... model_bridge.i"
-	@echo "... model_bridge.s"
+	@echo "... model_bridge/model_bridge.o"
+	@echo "... model_bridge/model_bridge.i"
+	@echo "... model_bridge/model_bridge.s"
+	@echo "... stt_tts/audio_capture.o"
+	@echo "... stt_tts/audio_capture.i"
+	@echo "... stt_tts/audio_capture.s"
 	@echo "... virtual_assistant_autogen/mocs_compilation.o"
 	@echo "... virtual_assistant_autogen/mocs_compilation.i"
 	@echo "... virtual_assistant_autogen/mocs_compilation.s"
-	@echo "... wake_word.o"
-	@echo "... wake_word.i"
-	@echo "... wake_word.s"
+	@echo "... wake_word/wake_word.o"
+	@echo "... wake_word/wake_word.i"
+	@echo "... wake_word/wake_word.s"
 .PHONY : help
 
 
