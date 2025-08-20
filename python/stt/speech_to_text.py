@@ -1,55 +1,61 @@
-# run: pip install faster-whisper sounddevice soundfile numpy webrtcvad
-from faster_whisper import WhisperModel
+# pip install faster-whisper sounddevice webrtcvad numpy
+
 import sounddevice as sd
 import numpy as np
-import queue, threading, time
-import webrtcvad
+import webrtcvad, collections, time
+from faster_whisper import WhisperModel
+import warnings, os
 
-MODEL = "small"
-DEVICE = "cpu"
+warnings.filterwarnings("ignore")  # hide Python warnings
+os.environ["CT2_VERBOSE"] = "0"  # hide faster-whisper warnings
+
 SAMPLE_RATE = 16000
-CHUNK_MS = 30            # 30ms frames
-SILENCE_TIMEOUT = 4      # seconds to stop after silence
+FRAME_DURATION = 30  # ms
+FRAME_SIZE = int(SAMPLE_RATE * FRAME_DURATION / 1000)
 
-model = WhisperModel(MODEL, device=DEVICE, compute_type="int8" if DEVICE=="cpu" else "float16")
-q = queue.Queue()
-vad = webrtcvad.Vad(2)  # Aggressiveness 0-3
-last_speech_time = time.time()
+vad = webrtcvad.Vad(2)  # 0-3, higher = more aggressive
+model = WhisperModel("small", device="cpu")
 
-def audio_callback(indata, frames, time_info, status):
-    if status: print("Audio status:", status)
-    q.put(indata.copy())
 
-def is_speech(frame):
-    # frame must be 16-bit PCM mono
-    pcm_data = (frame * 32768).astype(np.int16).tobytes()
-    return vad.is_speech(pcm_data, SAMPLE_RATE)
+def record_frames(timeout=2):
+    """Yield audio frames until silence for 'timeout' seconds"""
+    ring_buffer = collections.deque(maxlen=int(timeout * 1000 / FRAME_DURATION))
+    last_speech = time.time()
 
-def worker():
-    global last_speech_time
-    buf = np.zeros((0, 1), dtype=np.float32)
-    while True:
-        chunk = q.get()
-        buf = np.concatenate([buf, chunk], axis=0)
+    with sd.InputStream(
+        channels=1, samplerate=SAMPLE_RATE, dtype="int16", blocksize=FRAME_SIZE
+    ) as stream:
+        while True:
+            frame, _ = stream.read(FRAME_SIZE)
+            frame_bytes = frame.tobytes()
+            is_speech = vad.is_speech(frame_bytes, SAMPLE_RATE)
 
-        # process small frames for quick VAD
-        while buf.shape[0] >= int(SAMPLE_RATE * (CHUNK_MS / 1000.0)):
-            frame = buf[:int(SAMPLE_RATE * (CHUNK_MS / 1000.0)), 0]
-            buf = buf[int(SAMPLE_RATE * (CHUNK_MS / 1000.0)):]
-            
-            if is_speech(frame):
-                last_speech_time = time.time()
-                # transcribe immediately
-                segments, _ = model.transcribe(frame, language="en", vad_filter=True)
-                for s in segments:
-                    print(s.text)
+            if is_speech:
+                last_speech = time.time()
+                yield frame
             else:
-                if time.time() - last_speech_time > SILENCE_TIMEOUT:
-                    print("No speech detected. Stopping.")
-                    return
+                if time.time() - last_speech > timeout:
+                    break
 
-threading.Thread(target=worker, daemon=True).start()
-with sd.InputStream(channels=1, samplerate=SAMPLE_RATE, callback=audio_callback, blocksize=0):
-    print("Listening… Speak something!")
-    threading.Event().wait()
 
+def transcribe():
+    audio = b"".join([f.tobytes() for f in record_frames()])
+    if not audio:
+        return None
+
+    audio_np = np.frombuffer(audio, np.int16).astype(np.float32) / 32768.0
+    segments, _ = model.transcribe(audio_np, beam_size=5)
+
+    text = " ".join([seg.text for seg in segments])
+    return text.strip()
+
+
+if __name__ == "__main__":
+    print("Speak something... (program exits if you stop talking)")
+    while True:
+        text = transcribe()
+        if text:
+            print("You said:", text)
+        else:
+            print("No speech detected. Exiting.")
+            break
